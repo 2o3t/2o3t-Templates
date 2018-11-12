@@ -1,0 +1,11 @@
+{
+  "name": "2o3t-templates",
+  "version": "0.0.1",
+  "description": "2O3T Templates for 2O3T-CLI.",
+  "author": "zyao89 <zyao89@gmail.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:libs": "node ./src/library.js"
+  },
+  "license": "MIT"
+}
