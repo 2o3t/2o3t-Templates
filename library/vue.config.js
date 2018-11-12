@@ -18,7 +18,7 @@ const vueConfig = {
         if (debug) { // 开发环境配置
             config.devtool = 'cheap-module-eval-source-map';
         } else { // 生产环境配置
-            const externals = config.externals;
+            const externals = config.externals || {};
             Object.assign(config, {
                 externals: Object.assign(externals, {
                     // '2o3t-ui': 'otui',
