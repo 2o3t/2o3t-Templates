@@ -21,7 +21,9 @@ const vueConfig = {
             const externals = config.externals || {};
             Object.assign(config, {
                 externals: Object.assign(externals, {
-                    // '2o3t-ui': 'otui',
+                    'highlight.js': 'hljs',
+                    'markdown-it': 'markdownit',
+                    clipboard: 'clipboard-polyfill',
                 }),
             });
         }
@@ -29,11 +31,13 @@ const vueConfig = {
             resolve: {
                 alias: {
                     '@': path.resolve(__dirname, './src'),
+                    '@router': path.resolve(__dirname, './src/router'),
                     '@assets': path.resolve(__dirname, './src/assets'),
                     '@views': path.resolve(__dirname, './src/views'),
                     '@components': path.resolve(__dirname, './src/components'),
-                    '@libs': path.resolve(__dirname, './libs'),
+                    '@designs': path.resolve(__dirname, './src/designs'),
                     vue$: 'vue/dist/vue.esm.js',
+                    '@otui': path.resolve(__dirname, './libs'),
                 },
                 extensions: [ '.js', '.vue', '.json', '.css' ],
             },
