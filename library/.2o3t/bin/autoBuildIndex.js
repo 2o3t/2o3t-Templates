@@ -9,15 +9,15 @@ const initIndexs = (dirName = 'components') => {
     // first create index.js
     const indexPath = path.join(compPath, 'index.js');
     if (!fs.existsSync(indexPath)) {
-        fs.copyFileSync(path.join(__dirname, '../src/index.js'), indexPath);
+        // <!-- ##&DIRNAME_NAME&## -->
+        const cfText = fs.readFileSync(path.join(__dirname, '../src/index.js')).toString();
+        const newText = cfText.replace(/<!-- ##&DIRNAME_NAME&## -->/igm, `/${dirName}`);
+        fs.writeFileSync(indexPath, newText);
     }
     // first create CompFactory.js
     const cfPath = path.join(compPath, 'CompFactory.js');
     if (!fs.existsSync(cfPath)) {
-        // <!-- ##&DIRNAME_NAME&## -->
-        const cfText = fs.readFileSync(path.join(__dirname, '../src/CompFactory.js')).toString();
-        const newText = cfText.replace(/<!-- ##&DIRNAME_NAME&## -->/igm, `/${dirName}`);
-        fs.writeFileSync(cfPath, newText);
+        fs.copyFileSync(path.join(__dirname, '../src/index.js'), cfPath);
     }
 
     const components = fs.readdirSync(compPath);

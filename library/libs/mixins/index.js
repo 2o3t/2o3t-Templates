@@ -1,6 +1,10 @@
 
 function createMixin(options) {
+    console.log(options);
     return {
+        beforeCreate() {
+
+        },
     };
 }
 
