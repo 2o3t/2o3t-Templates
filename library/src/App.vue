@@ -4,7 +4,7 @@
         <ot-nav :isCollapse="isCollapse" :theme="$otTheme" placement="right">
             <ot-link slot="left" to="/">
                 <ot-logo :theme="$otTheme" icon="logo" lib="font-ot">
-                    <span>2O3T-UI</span>
+                    <span><!-- ##&PROJECT_NAME&## --></span>
                     <!-- <span slot="subtitle">OT-UI</span> -->
                 </ot-logo>
             </ot-link>
