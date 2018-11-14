@@ -17,7 +17,7 @@ const initIndexs = (dirName = 'components') => {
     // first create CompFactory.js
     const cfPath = path.join(compPath, 'CompFactory.js');
     if (!fs.existsSync(cfPath)) {
-        fs.copyFileSync(path.join(__dirname, '../src/index.js'), cfPath);
+        fs.copyFileSync(path.join(__dirname, '../src/CompFactory.js'), cfPath);
     }
 
     const components = fs.readdirSync(compPath);
