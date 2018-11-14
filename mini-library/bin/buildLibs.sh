@@ -4,11 +4,9 @@
 set -e
 
 # lint
-npm run lint:libs
+npm run lint
 
 # build
-npm run sass:base:build
-
 rollup -c ./libs/rollup.config.js
 
 # finish

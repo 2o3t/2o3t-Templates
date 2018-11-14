@@ -16,4 +16,4 @@ npm publish
 npm run deploy
 
 # finish
-echo 'Finish...'
+echo 'Deploy Finish...'

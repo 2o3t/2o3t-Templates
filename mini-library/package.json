@@ -1,39 +1,25 @@
 {
     "name": "<!-- ##&PROJECT_NAME&## -->",
     "version": "0.0.1",
-    "author": "zyao89 <zyao89@gmail.com>",
-    "description": "<!-- ##&PROJECT_NAME&## --> for Vue",
+    "description": "<!-- ##&PROJECT_NAME&## --> Mini Library",
+    "main": "index.js",
     "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "build:libs": "sh ./bin/buildLibs.sh",
-        "deploy:libs": "npm run build:libs && npm publish",
-        "lint": "vue-cli-service lint",
-        "lint:libs": "vue-cli-service lint ./libs",
-        "sass:base": "node_modules/node-sass/bin/node-sass --watch libs/sass/base.scss libs/styles/base.css",
-        "sass:base:build": "node_modules/node-sass/bin/node-sass libs/sass/base.scss libs/styles/base.css",
-        "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh",
-        "deploy": "sh ./bin/deploy.sh"
+        "lint": "eslint ./ --fix",
+        "build": "sh ./bin/buildLibs.sh",
+        "deploy": "npm run build && npm publish",
+        "sass:main": "node_modules/node-sass/bin/node-sass --watch libs/sass/main.scss libs/styles/main.css",
+        "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh"
     },
+    "author": "zyao89 <zyao89@gmail.com>",
     "license": "MIT",
-    "main": "dist/index.js",
     "files": [
-        "dist/**/*"
+        "dist/**/*",
+        "public/**/*"
     ],
     "dependencies": {
-        "2o3t-css-colors": "^0.0.1",
-        "2o3t-icon-font": "^0.0.5",
-        "2o3t-ui": "^0.0.32",
-        "highlight.js": "^9.13.1",
-        "lodash": "^4.17.11",
-        "moment": "^2.22.2",
-        "clipboard-polyfill": "^2.7.0",
-        "cheerio": "^1.0.0-rc.2",
-        "font-awesome": "^4.7.0",
-        "markdown-it": "^8.4.2",
-        "vue-js-modal": "^1.3.26"
     },
     "devDependencies": {
+        "eslint": "^5.9.0",
         "@vue/cli-plugin-babel": "^3.0.4",
         "@vue/cli-plugin-eslint": "^3.0.4",
         "@vue/cli-service": "^3.0.4",

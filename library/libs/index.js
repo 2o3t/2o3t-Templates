@@ -1,12 +1,14 @@
 import './styles/normalize.css';
-import './styles/base.css';
-// import './styles/main.css';
 
-import createMixin from './mixins';
+import OTUIColors from '2o3t-css-colors/dist/2o3t-ui/index.js';
+const { setOptions, otMixin } = OTUIColors;
+import '2o3t-css-colors/dist/2o3t-ui/styles.css';
+
 import components from './components';
 import directives from './directives';
 import services from './services';
 import plugins from './plugins';
+import utils from './utils';
 
 let componentsDev;
 let directivesDev;
@@ -46,7 +48,7 @@ export default {
             }
         }
 
-        const mixin = createMixin(options);
+        setOptions(options);
         for (const key in comps) {
             if (comps.hasOwnProperty(key)) {
                 const element = comps[key];
@@ -56,14 +58,14 @@ export default {
                     if (!element.mixins) {
                         element.mixins = [];
                     }
-                    element.mixins.push(mixin);
+                    element.mixins.push(otMixin);
                 }
                 Vue.component(key, element);
             }
         }
 
         if (options.global === true) {
-            Vue.mixin(mixin);
+            Vue.mixin(otMixin);
         }
 
         // 注册三方组件
@@ -71,5 +73,14 @@ export default {
 
         const pluginsOptions = options.plugins || {};
         Vue.use(plugins, pluginsOptions);
+
+
+        // utils
+        Vue.mixin({
+            beforeCreate() {
+                // 工具类
+                this.$otUtils = utils(this);
+            },
+        });
     },
 };
