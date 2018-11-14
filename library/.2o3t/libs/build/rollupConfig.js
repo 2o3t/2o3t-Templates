@@ -17,6 +17,7 @@ import VuePlugin from 'rollup-plugin-vue';
 const path = require('path');
 
 const defaultOpts = {
+    index: './index.js',
     root: __dirname,
     dist: 'dist',
     external: ['vue'],
@@ -35,8 +36,8 @@ export default function (opts) {
     } = Object.assign({}, defaultOpts, opts);
 
     const config = {
-        input: path.resolve(root, './index.js'),
-        external: ['highlight.js', 'moment', 'vue'],
+        input: path.resolve(root, index),
+        external: external,
         output: {
             // dir: path.resolve(process.cwd(), `./${DIST}`),
             // format: 'esm', // umd, esm
