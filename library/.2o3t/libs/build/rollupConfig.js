@@ -30,6 +30,7 @@ const defaultOpts = {
 
 export default function (opts) {
     const {
+        index,
         root, dist,
         external,
         format, name, globals,
@@ -105,14 +106,20 @@ export default function (opts) {
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
             }),
-            uglify({
-                compress: {
-                    pure_getters: true,
-                    unsafe: true,
-                    unsafe_comps: true,
-                    warnings: false,
-                },
-            }),
+            uglify(
+                {
+                    compress: {
+                        pure_getters: true,
+                        unsafe: true,
+                        unsafe_comps: true,
+                        warnings: false,
+                        evaluate: false,
+                        keep_fnames: true,
+                        keep_infinity: true,
+                    },
+                    sourcemap: true,
+                }
+            ),
         ],
     };
 
