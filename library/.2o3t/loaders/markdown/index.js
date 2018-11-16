@@ -17,16 +17,16 @@ module.exports = function(source) {
 
     const result = mdParser.render(source);
 
-    const $ = cheerio.load(result, {
-        decodeEntities: false,
-        lowerCaseAttributeNames: false,
-        lowerCaseTags: false,
-    });
+    // const $ = cheerio.load(result, {
+    //     decodeEntities: false,
+    //     lowerCaseAttributeNames: false,
+    //     lowerCaseTags: false,
+    // });
 
-    // 替换
-    replaceTag($);
+    // // 替换
+    // replaceTag($);
 
-    const html = $('body').html();
+    // const html = $('body').html();
 
-    return 'export default ' + JSON.stringify(html);
+    return 'export default ' + JSON.stringify(result);
 };
