@@ -7,8 +7,10 @@ import '2o3t-icon-font/dist/font-ot.css';
 import '2o3t-ui/dist/styles.css';
 import OTUI from '2o3t-ui';
 
+const color = window.localStorage && window.localStorage.getItem('ot-color') || null;
 Vue.use(OTUI, {
     global: true,
+    color,
 });
 
 Vue.config.productionTip = false;

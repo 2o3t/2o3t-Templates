@@ -11,8 +11,11 @@ import OTUI from '2o3t-ui';
 // const markdownit = require('markdown-it');
 // const cheerio = require('cheerio');
 // const clipboard = require('clipboard-polyfill');
+
+const color = window.localStorage && window.localStorage.getItem('ot-color') || null;
 Vue.use(OTUI, {
     global: true,
+    color,
     // plugins: {
     //     markdownit,
     //     cheerio,
