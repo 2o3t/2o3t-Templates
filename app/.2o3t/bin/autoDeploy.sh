@@ -4,7 +4,7 @@
 set -e
 
 # version ctrl
-node ./.2o3t/bin/libsVersionCtrl.js
+# node ./.2o3t/bin/libsVersionCtrl.js
 
 # deploy
 npm run deploy
