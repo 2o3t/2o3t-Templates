@@ -12,6 +12,7 @@
         "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh",
         "deploy": "sh ./bin/deploy.sh"
     },
+    "private": true,
     "license": "MIT",
     "main": "webs/index.js",
     "files": [
@@ -19,8 +20,8 @@
     ],
     "dependencies": {
         "2o3t-css-colors": "^0.0.18",
-        "2o3t-icon-font": "^0.0.10",
-        "2o3t-ui": "^0.0.58",
+        "2o3t-icon-font": "^0.0.14",
+        "2o3t-ui": "^0.0.61",
         "highlight.js": "^9.13.1",
         "lodash": "^4.17.11",
         "moment": "^2.22.2",

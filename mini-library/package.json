@@ -11,6 +11,7 @@
         "sass:main": "node_modules/node-sass/bin/node-sass --watch libs/sass/main.scss libs/styles/main.css",
         "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh"
     },
+    "private": true,
     "author": "zyao89 <zyao89@gmail.com>",
     "license": "MIT",
     "files": [
