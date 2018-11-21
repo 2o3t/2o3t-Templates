@@ -7,6 +7,7 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "build:libs": "sh ./bin/buildLibs.sh",
+        "build:libs2": "vue-cli-service build --target lib --name <!-- ##&PROJECT_NAME&## --> --dest dist libs/index.js",
         "deploy:libs": "npm run build:libs && npm publish",
         "lint": "vue-cli-service lint",
         "lint:libs": "vue-cli-service lint ./libs",
@@ -22,9 +23,9 @@
         "dist/**/*"
     ],
     "dependencies": {
-        "2o3t-css-colors": "^0.0.18",
-        "2o3t-icon-font": "^0.0.14",
-        "2o3t-ui": "^0.0.61",
+        "2o3t-css-colors": "^0.0.19",
+        "2o3t-icon-font": "^0.0.15",
+        "2o3t-ui": "^0.0.63",
         "highlight.js": "^9.13.1",
         "lodash": "^4.17.11",
         "moment": "^2.22.2",
