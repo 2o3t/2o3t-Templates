@@ -1,0 +1,18 @@
+{
+    "exclude": [ "node_modules", "dist", "public" ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "esnext",
+        "strict": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "paths": {
+            "~/*": ["./*"],
+            "@/*": ["./app/*"],
+            "@src/*": ["./src/*"],
+        }
+    }
+}

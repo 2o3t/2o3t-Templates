@@ -19,9 +19,9 @@
         "webs/**/*"
     ],
     "dependencies": {
-        "2o3t-css-colors": "^0.0.19",
-        "2o3t-icon-font": "^0.0.16",
-        "2o3t-ui": "^0.0.63",
+        "2o3t-css-colors": "^0.0.21",
+        "2o3t-icon-font": "^0.0.20",
+        "2o3t-ui": "^0.0.71",
         "highlight.js": "^9.13.1",
         "lodash": "^4.17.11",
         "moment": "^2.22.2",
@@ -43,6 +43,7 @@
         "babel-preset-env": "^1.7.0",
         "babel-preset-stage-2": "^6.24.1",
         "babel-register": "^6.26.0",
+        "compression-webpack-plugin": "^2.0.0",
         "eslint-config-2o3t": "^1.1.1",
         "eslint-loader": "^2.1.1",
         "node-sass": "^4.9.3",
