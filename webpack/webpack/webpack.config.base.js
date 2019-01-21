@@ -237,6 +237,7 @@ const config = {
                     appendTsSuffixTo: [ /\.vue$/ ],
                 },
             },
+            // svg-sprite-loader
         ],
     },
     plugins: [
