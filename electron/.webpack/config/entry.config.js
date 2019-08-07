@@ -21,20 +21,22 @@ const mainKeys = [ 'main' ];
 module.exports = {
     // 渲染进程
     renderer: rendererKeys.reduce((obj, key) => {
+        const entry = [ path.join(RENDERER_CWD, key, 'index.js') ];
         if (__DEV__) {
-            obj[key] = [ path.join(__dirname, 'dev-client'), path.join(RENDERER_CWD, key, 'index.js') ];
-        } else {
-            obj[key] = [ path.join(RENDERER_CWD, key, 'index.js') ];
+            entry.unshift(path.join(__dirname, 'dev-client'));
         }
+        entry.unshift('babel-polyfill', path.join(__dirname, '../base'));
+        obj[key] = entry;
         return obj;
     }, {}),
     // 主进程
     main: mainKeys.reduce((obj, key) => {
+        const entry = [ path.join(MAIN_CWD, key, 'index.js') ];
         if (__DEV__) {
-            obj[key] = [ path.join(__dirname, 'dev-main.js'), path.join(MAIN_CWD, key, 'index.js') ];
-        } else {
-            obj[key] = [ path.join(MAIN_CWD, key, 'index.js') ];
+            entry.unshift(path.join(__dirname, 'dev-main.js'));
         }
+        entry.unshift('babel-polyfill');
+        obj[key] = entry;
         return obj;
     }, {}),
 };

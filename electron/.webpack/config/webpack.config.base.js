@@ -39,22 +39,24 @@ const defConfig = {
                                     modules: true,
                                     localIdentName: '[local]_[hash:base64:5]',
                                 },
-                            }, 'sass-loader',
+                            },
+                            'postcss-loader',
+                            'sass-loader',
                         ],
                     },
                     // this matches plain `<style>` or `<style scoped>`
                     {
-                        use: [ 'vue-style-loader', 'css-loader', 'sass-loader' ],
+                        use: [ 'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ],
                     },
                 ],
             },
             {
                 test: /\.sass$/,
-                use: [ 'vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax' ],
+                use: [ 'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader?indentedSyntax' ],
             },
             {
                 test: /\.less$/,
-                use: [ 'vue-style-loader', 'css-loader', {
+                use: [ 'vue-style-loader', 'css-loader', 'postcss-loader', {
                     loader: 'less-loader', options: {
                         javascriptEnabled: true,
                         modifyVars: AntdConfig,
@@ -63,7 +65,7 @@ const defConfig = {
             },
             {
                 test: /\.css$/,
-                use: [ 'vue-style-loader', 'css-loader' ],
+                use: [ 'vue-style-loader', 'css-loader', 'postcss-loader' ],
             },
             {
                 test: /\.html$/,
@@ -130,7 +132,7 @@ const defConfig = {
     },
     resolve: {
         alias: aliasConfig,
-        extensions: [ '.js', '.jsx', '.vue', '.css', '.node', '.json' ],
+        extensions: [ '.js', '.jsx', '.vue', '.node', '.json' ],
     },
     plugins: [
         new webpack.DefinePlugin({ // 用途：定义全局常量
@@ -143,5 +145,12 @@ const defConfig = {
         __filename: __DEV__,
     },
 };
+
+// if (__DEV__) {
+const { dependencies } = require(path.resolve(ROOT_CWD, 'package.json'));
+defConfig.externals = [
+    ...Object.keys(dependencies || [])
+];
+// }
 
 module.exports = defConfig;

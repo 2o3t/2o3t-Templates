@@ -1,0 +1,49 @@
+@import './vars';
+
+html {
+    min-height: 100%;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    color: $--global-color;
+    background-color: $--global-background;
+}
+
+body {
+    // font-family: LatoWeb, "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font: 14px/1.5 "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-variant: tabular-nums;
+    transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // font-size: 14px;
+    // line-height: 1.5;
+    font-weight: 400;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+a {
+    text-decoration: none;
+
+    &:-webkit-any-link {
+        color: inherit;
+    }
+}
+
+input, textarea {
+    outline: none;
+
+    &::-webkit-input-placeholder {
+        /* placeholder字体大小  */
+        font-size: 12px;
+    }
+}
